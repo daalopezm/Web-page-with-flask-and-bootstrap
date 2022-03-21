@@ -2,70 +2,87 @@
 
 {% block content %}
 <h1>My portfolio</h1>
-<main class="container d-inline-flex flex-wrap justify-content-around">
-    <div class="card" style="width: 15rem;">
-        <img src="{{image1}}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Deep Learning</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+<main class="container d-inline-flex flex-wrap">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-sm-3 row-cols-md-4">
+        <div class="col p-2">
+            <div class="card" style="width: 15rem;">
+                <img src="{{image1}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Deep Learning</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
         </div>
+        <div class="col p-2">
+            <div class="card" style="width: 15rem;">
+                <img src="{{image2}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Data science</h5>
+                    <p class="card-text">Another example of content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere 2</a>
+                </div>
+            </div>
+        </div>
+        <div class="col p-2">
+            <div class="card" style="width: 15rem;">
+                <img src="{{image3}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Mechatronic</h5>
+                    <p class="card-text">Even another example of content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="col p-2">
+            <div class="card" style="width: 15rem;">
+                <video class="card-img-top" autoplay muted loop id="tm-video">
+                    <source src="{{video1}}" type="video/mp4">
+                </video>
+                <div class="card-body">
+                    <h5 class="card-title">Physics</h5>
+                    <p class="card-text">Even another example of content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="col p-2">
+            <div class="card" style="width: 15rem;">
+                <img src="{{image5}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Mathematics</h5>
+                    <p class="card-text">Even another example of content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="col p-2">
+            <div class="card" style="width: 15rem;">
+                <img src="{{image6}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Quantum Field Theory</h5>
+                    <p class="card-text">Even another example of content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="col p-2">
+            <div class="card" style="width: 15rem;">
+                <video class="card-img-top" autoplay muted loop id="tm-video">
+                    <source src="{{video0}}" type="video/mp4">
+                </video>
+                <div class="card-body">
+                    <h5 class="card-title">Black Holes</h5>
+                    <p class="card-text">Even another example of content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere 3</a>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="card" style="width: 15rem;">
-        <img src="{{image2}}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Data science</h5>
-            <p class="card-text">Another example of content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere 2</a>
-        </div>
-    </div>
-    <div class="card" style="width: 15rem;">
-        <img src="{{image3}}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Mechatronic</h5>
-            <p class="card-text">Even another example of content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere 3</a>
-        </div>
-    </div>
-    <div class="card" style="width: 15rem;">
-        <video class="card-img-top" autoplay muted loop id="tm-video">
-            <source src="{{video1}}" type="video/mp4">
-        </video>
-        <div class="card-body">
-            <h5 class="card-title">Physics</h5>
-            <p class="card-text">Even another example of content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere 3</a>
-        </div>
-    </div>
-    <div class="card" style="width: 15rem;">
-        <img src="{{image5}}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Mathematics</h5>
-            <p class="card-text">Even another example of content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere 3</a>
-        </div>
-    </div>
-    <div class="card" style="width: 15rem;">
-        <img src="{{image6}}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Quantum Field Theory</h5>
-            <p class="card-text">Even another example of content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere 3</a>
-        </div>
-    </div>
-    <div class="card" style="width: 15rem;">
-        <video class="card-img-top" autoplay muted loop id="tm-video">
-            <source src="{{video0}}" type="video/mp4">
-        </video>
-        <div class="card-body">
-            <h5 class="card-title">Black Holes</h5>
-            <p class="card-text">Even another example of content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere 3</a>
-        </div>
-    </div> 
+
 </main>
-
-
 
 {% endblock%}
