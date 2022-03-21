@@ -1,9 +1,9 @@
 {% extends 'layout.html'%}
 
 {% block content %}
-<h1>Mi primera pagina web con flask</h1>
-<div class="container p-3 d-inline-flex flex-wrap justify-content-around">
-    <div class="card" style="width: 18rem;">
+<h1>My portfolio</h1>
+<main class="container d-inline-flex flex-wrap justify-content-around">
+    <div class="card" style="width: 15rem;">
         <img src="{{image1}}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Deep Learning</h5>
@@ -12,7 +12,7 @@
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 15rem;">
         <img src="{{image2}}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Data science</h5>
@@ -20,7 +20,7 @@
             <a href="#" class="btn btn-primary">Go somewhere 2</a>
         </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 15rem;">
         <img src="{{image3}}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Mechatronic</h5>
@@ -28,15 +28,17 @@
             <a href="#" class="btn btn-primary">Go somewhere 3</a>
         </div>
     </div>
-    <div class="card" style="width: 18rem;">
-        <img src="{{image4}}" class="card-img-top" alt="...">
+    <div class="card" style="width: 15rem;">
+        <video class="card-img-top" autoplay muted loop id="tm-video">
+            <source src="{{video1}}" type="video/mp4">
+        </video>
         <div class="card-body">
             <h5 class="card-title">Physics</h5>
             <p class="card-text">Even another example of content.</p>
             <a href="#" class="btn btn-primary">Go somewhere 3</a>
         </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 15rem;">
         <img src="{{image5}}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Mathematics</h5>
@@ -44,7 +46,7 @@
             <a href="#" class="btn btn-primary">Go somewhere 3</a>
         </div>
     </div>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 15rem;">
         <img src="{{image6}}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Quantum Field Theory</h5>
@@ -52,15 +54,17 @@
             <a href="#" class="btn btn-primary">Go somewhere 3</a>
         </div>
     </div>
-    <div class="card" style="width: 18rem;">
-        <img src="{{image7}}" class="card-img-top" alt="...">
+    <div class="card" style="width: 15rem;">
+        <video class="card-img-top" autoplay muted loop id="tm-video">
+            <source src="{{video0}}" type="video/mp4">
+        </video>
         <div class="card-body">
             <h5 class="card-title">Black Holes</h5>
             <p class="card-text">Even another example of content.</p>
             <a href="#" class="btn btn-primary">Go somewhere 3</a>
         </div>
     </div> 
-</div>
+</main>
 
 
 
