@@ -1,3 +1,11 @@
+"""
+To deploy again, use:
+        heroku git:remote infinite-thicket-70020
+        git push heroku master
+
+Author: Daniel Lopez
+"""
+
 from email.mime import image
 from fileinput import filename
 from flask import Flask, render_template, url_for
