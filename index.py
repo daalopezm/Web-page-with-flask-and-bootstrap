@@ -19,7 +19,7 @@ def not_found(error):
 
 @app.route('/')
 def home():
-    videos = {f'video{num}': url_for('static',filename='videos/{}'.format(os.listdir('./static/videos/')[num])) for num in range(2)}
+    videos = {f'video{num}': url_for('static',filename='videos/{}'.format(os.listdir('./static/videos/')[num])) for num in range(3)}
     images = {f'image{num}': url_for('static',filename='images/{}'.format(os.listdir('./static/images/')[num])) for num in range(9)}
     return render_template('index.html', **images, **videos)
 
