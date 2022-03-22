@@ -1,4 +1,9 @@
-{% extends 'layout.html'%}
+{% extends 'layout.html' %}
+
+{% block title %}
+{{ super() }}
+inicio
+{% endblock %}
 
 {% block content %}
 <h1>My portfolio</h1>
@@ -9,17 +14,14 @@
                 <figure class="effect-chico tm-gallery-item">
                     <img src="{{image1}}" class="card-img-top" alt="...">
                     <figcaption>
-                        <p>Chico's main fear was missing the morning bus.</p>							
+                        <p class="card-text">Some programming projects that are not related with data science.</p>
                     </figcaption>
-                </figure>             
-                <div class="card-body">
-                    <h5 class="card-title">Programming</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's
-                        content.</p>
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open
-                        Modal</button>
-                    <!--<a href="#" class="btn btn-primary">Go somewhere</a>!-->
+                </figure>
+                <div class="card-body pt-0">
+                    <h5 class="card-title pb-2">Programming</h5>
+                    <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalProgramming"> About
+                        these
+                        projects</a>
                 </div>
             </div>
         </div>
@@ -28,13 +30,14 @@
                 <figure class="effect-chico tm-gallery-item">
                     <img src="{{image2}}" class="card-img-top" alt="...">
                     <figcaption>
-                        <p>Chico's main fear was missing the morning bus.</p>							
+                        <p class="card-text">Images and Natural Lenguaje Processing, even Unsupervised Learning
+                            projects.</p>
                     </figcaption>
-                </figure>  
-                <div class="card-body">
-                    <h5 class="card-title">Deep Learning</h5>
-                    <p class="card-text">Another example of content.</p>
-                    <a href="#" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Go somewhere 2</a>
+                </figure>
+                <div class="card-body pt-0">
+                    <h5 class="card-title pb-2">Deep Learning</h5>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalDeepLearning">About these
+                        projects</a>
                 </div>
             </div>
         </div>
@@ -43,37 +46,49 @@
                 <figure class="effect-chico tm-gallery-item">
                     <img src="{{image3}}" class="card-img-top" alt="...">
                     <figcaption>
-                        <p>Chico's main fear was missing the morning bus.</p>							
+                        <p>Predictions from data and visualization.</p>
                     </figcaption>
-                </figure>  
-                <div class="card-body">
-                    <h5 class="card-title">Data science</h5>
-                    <p class="card-text">Even another example of content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere 3</a>
+                </figure>
+                <div class="card-body pt-0">
+                    <h5 class="card-title pb-2">Data science</h5>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalMachineLearning">About
+                        these
+                        projects</a>
                 </div>
             </div>
         </div>
         <div class="col p-2">
             <div class="card" style="width: 15rem;">
-                <video class="card-img-top" autoplay muted loop id="tm-video">
-                    <source src="{{video0}}" type="video/mp4">
-                </video>
-                <div class="card-body">
-                    <h5 class="card-title">Physics</h5>
-                    <p class="card-text">Even another example of content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere 3</a>
+                <figure class="effect-chico tm-gallery-item">
+                    <video class="card-img-top" autoplay muted loop id="tm-video">
+                        <source src="{{video0}}" type="video/mp4">
+                    </video>
+                    <figcaption>
+                        <p>QFT and QFT on curved backgrounds, Quantum Mechanics, Statistical Mechanics, String Theory,
+                            Quantum Gravity.</p>
+                    </figcaption>
+                </figure>
+                <div class="card-body pt-0">
+                    <h5 class="card-title pb-2">Physics</h5>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalPhysics">About these
+                        projects</a>
                 </div>
             </div>
         </div>
         <div class="col p-2">
             <div class="card" style="width: 15rem;">
-                <video class="card-img-top" autoplay muted loop id="tm-video">
-                    <source src="{{video1}}" type="video/mp4">
-                </video>
-                <div class="card-body">
-                    <h5 class="card-title">Mechatronics</h5>
-                    <p class="card-text">Even another example of content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere 3</a>
+                <figure class="effect-chico tm-gallery-item">
+                    <video class="card-img-top" autoplay muted loop id="tm-video">
+                        <source src="{{video1}}" type="video/mp4">
+                    </video>
+                    <figcaption>
+                        <p>Control Projects, Robotics, Mechanical Desing, PLC programming.</p>
+                    </figcaption>
+                </figure>
+                <div class="card-body pt-0">
+                    <h5 class="card-title pb-2">Mechatronics</h5>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalMechatronic">About these
+                        projects</a>
                 </div>
             </div>
         </div>
@@ -83,20 +98,37 @@
     <!--Modal-->
 
     <!--Modal programming-->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" id="modalProgramming" tabindex="-1" role="dialog" aria-labelledby="tituloVentana"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 id="tituloVentana">Proyectos</h5>
+                    <h5 id="tituloVentana">Programming projects</h5>
                     <button class="close" data-dismiss="modal" aria-label="Cerrar">
                         <span arria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div class="alert alert-success">
-                        <h6>
-                            <strong>tus datos se han guardado exitosamente</strong>
-                        </h6>
+                <div class="modal-body" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+                    <div class="container">
+                        <div class="row">
+                            <div id="list-example" class="list-group col-sm-3">
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('all')">All</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('gas')">Gas simulator</a>
+                            </div>
+                            <div bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0"
+                                class="scrollspy-example col-sm-9 container-items" tabindex="0">
+                                <div class="filterDiv gas">
+                                    <h4 id="list-item-1">Gas simulator</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa hic amet
+                                        reiciendis vero
+                                        magni quibusdam adipisci optio veritatis molestiae delectus officiis rem eius
+                                        fugiat
+                                        eveniet tenetur natus, quae quidem alias.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -109,6 +141,344 @@
     </div>
 
 
+    <!--Modal DeepLearning-->
+    <div class="modal fade" id="modalDeepLearning" tabindex="-1" role="dialog" aria-labelledby="tituloVentana"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="tituloVentana">DeepLearning projects</h5>
+                    <button class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span arria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+                    <div class="container">
+                        <div class="row">
+                            <div id="list-example" class="list-group col-sm-3">
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('all')">All</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('imageRecognition')">Image Recognition</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('neuralNetworkTF2')">Neural network with TF2</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('unsupevised')">Unsupervised Learning</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('nlp')">Natural Lenguaje Processing</a>
+                            </div>
+                            <div bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0"
+                                class="scrollspy-example col-sm-9 container-items" tabindex="0">
+                                <div class="filterDiv imageRecognition">
+                                    <h4 id="list-item-2">Image Recognition</h4>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum ipsa suscipit
+                                        voluptatibus
+                                        voluptas maiores cum facere soluta incidunt, adipisci accusamus inventore
+                                        cupiditate
+                                        dicta nobis, et consequatur? Facilis natus repellat neque.</p>
+                                </div>
+                                <div class="filterDiv neuralNetworkTF2">
+                                    <h4 id="list-item-3 neuralNetworkTF2">Neural network with TF2</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, cupiditate
+                                        maiores
+                                        commodi officia accusamus autem ratione. Excepturi consequatur perferendis
+                                        mollitia qui,
+                                        dolores porro laborum laudantium, culpa reprehenderit quia aliquid vero.</p>
+                                </div>
+                                <div class="filterDiv unsupevised">
+                                    <h4 id="list-item-4">Unsupervised Learning</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel eveniet ipsum error
+                                        dicta
+                                        delectus voluptatem laudantium, quis ipsa illo nostrum laboriosam enim, cumque
+                                        perferendis quam maxime. Ut unde facilis debitis?</p>
+                                </div>
+                                <div class="filterDiv nlp">
+                                    <h4 id="list-item-5">Natural Lenguaje Processing</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel eveniet ipsum error
+                                        dicta
+                                        delectus voluptatem laudantium, quis ipsa illo nostrum laboriosam enim, cumque
+                                        perferendis quam maxime. Ut unde facilis debitis?</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning" type="button" data-dismiss="modal">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal MachineLearning-->
+    <div class="modal fade" id="modalMachineLearning" tabindex="-1" role="dialog" aria-labelledby="tituloVentana"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="tituloVentana">MachineLearning projects</h5>
+                    <button class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span arria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+                    <div class="container">
+                        <div class="row">
+                            <div id="list-example" class="list-group col-sm-3">
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('all')">All</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('PricePredictions')">Price predictions</a>
+                            </div>
+                            <div bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0"
+                                class="scrollspy-example col-sm-9 container-items" tabindex="0">
+                                <div class="filterDiv PricePredictions">
+                                    <h4 id="list-item-2">Price Predictions</h4>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum ipsa suscipit
+                                        voluptatibus
+                                        voluptas maiores cum facere soluta incidunt, adipisci accusamus inventore
+                                        cupiditate
+                                        dicta nobis, et consequatur? Facilis natus repellat neque.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning" type="button" data-dismiss="modal">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal Physics-->
+    <div class="modal fade" id="modalPhysics" tabindex="-1" role="dialog" aria-labelledby="tituloVentana"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="tituloVentana">Physics projects</h5>
+                    <button class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span arria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+                    <div class="container">
+                        <div class="row">
+                            <div id="list-example" class="list-group col-sm-3">
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('all')">All</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('EQG')">Euclidean Quantum Gravity</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('Schrepresentation')">The Schrödinger representation in
+                                    curved space time</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('QFT')">YouTube Course in QFT (Spanish)</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('cbqft')">YouTube Course in QFT on curved backgrounds (Spanish)</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('stringth')">YouTube Course in String Theory (Spanish)</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('statisticaldeep')">Statistical Mechanics of DeepLearning</a>
+                            </div>
+                            <div bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0"
+                                class="scrollspy-example col-sm-9 container-items" tabindex="0">
+                                <div class="filterDiv EQG">
+                                    <h4 id="list-item-2">Euclidean Quantum Gravity</h4>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum ipsa suscipit
+                                        voluptatibus
+                                        voluptas maiores cum facere soluta incidunt, adipisci accusamus inventore
+                                        cupiditate
+                                        dicta nobis, et consequatur? Facilis natus repellat neque.</p>
+                                </div>
+                                <div class="filterDiv Schrepresentation">
+                                    <h4 id="list-item-2">The Schrödinger representation in
+                                        curved space time</h4>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum ipsa suscipit
+                                        voluptatibus
+                                        voluptas maiores cum facere soluta incidunt, adipisci accusamus inventore
+                                        cupiditate
+                                        dicta nobis, et consequatur? Facilis natus repellat neque.</p>
+                                </div>
+                                <div class="filterDiv QFT">
+                                    <h4 id="list-item-2">YouTube Course in QFT (Spanish)</h4>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum ipsa suscipit
+                                        voluptatibus
+                                        voluptas maiores cum facere soluta incidunt, adipisci accusamus inventore
+                                        cupiditate
+                                        dicta nobis, et consequatur? Facilis natus repellat neque.</p>
+                                </div>
+                                <div class="filterDiv cbqfts">
+                                    <h4 id="list-item-2">YouTube Course in QFT on curved backgrounds (Spanish)</h4>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum ipsa suscipit
+                                        voluptatibus
+                                        voluptas maiores cum facere soluta incidunt, adipisci accusamus inventore
+                                        cupiditate
+                                        dicta nobis, et consequatur? Facilis natus repellat neque.</p>
+                                </div>
+                                <div class="filterDiv stringth">
+                                    <h4 id="list-item-2">YouTube Course in String Theory (Spanish)</h4>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum ipsa suscipit
+                                        voluptatibus
+                                        voluptas maiores cum facere soluta incidunt, adipisci accusamus inventore
+                                        cupiditate
+                                        dicta nobis, et consequatur? Facilis natus repellat neque.</p>
+                                </div>
+                                <div class="filterDiv statisticaldeep">
+                                    <h4 id="list-item-2">Statistical Mechanics of DeepLearning (in progress...)</h4>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum ipsa suscipit
+                                        voluptatibus
+                                        voluptas maiores cum facere soluta incidunt, adipisci accusamus inventore
+                                        cupiditate
+                                        dicta nobis, et consequatur? Facilis natus repellat neque.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning" type="button" data-dismiss="modal">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Modal Mechatronic-->
+    <div class="modal fade" id="modalMechatronic" tabindex="-1" role="dialog" aria-labelledby="tituloVentana"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="tituloVentana">Mechatronic projects</h5>
+                    <button class="close" data-dismiss="modal" aria-label="Cerrar">
+                        <span arria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+                    <div class="container">
+                        <div class="row">
+                            <div id="list-example" class="list-group col-sm-3">
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('all')">All</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('Slidecontrol')">Slide controller</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('Molding')">Roof molding</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('micromouse')">Micromouse</a>
+                                <a class="btn-in list-group-item list-group-item-action"
+                                    onclick="filterSelection('finitelementanalys')">Finite Element Analysis</a>
+
+                            </div>
+                            <div bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0"
+                                class="scrollspy-example col-sm-9 container-items" tabindex="0">
+                                <div class="filterDiv Slidecontrol">
+                                    <h4 id="list-item-2">Slide controller</h4>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum ipsa suscipit
+                                        voluptatibus
+                                        voluptas maiores cum facere soluta incidunt, adipisci accusamus inventore
+                                        cupiditate
+                                        dicta nobis, et consequatur? Facilis natus repellat neque.</p>
+                                </div>
+                                <div class="filterDiv Molding">
+                                    <h4 id="list-item-2">Roof molding</h4>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum ipsa suscipit
+                                        voluptatibus
+                                        voluptas maiores cum facere soluta incidunt, adipisci accusamus inventore
+                                        cupiditate
+                                        dicta nobis, et consequatur? Facilis natus repellat neque.</p>
+                                </div>
+                                <div class="filterDiv micromouse">
+                                    <h4 id="list-item-2">Micromouse</h4>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum ipsa suscipit
+                                        voluptatibus
+                                        voluptas maiores cum facere soluta incidunt, adipisci accusamus inventore
+                                        cupiditate
+                                        dicta nobis, et consequatur? Facilis natus repellat neque.</p>
+                                </div>
+                                <div class="filterDiv finitelementanalys">
+                                    <h4 id="list-item-2">Finite Element Analysis</h4>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum ipsa suscipit
+                                        voluptatibus
+                                        voluptas maiores cum facere soluta incidunt, adipisci accusamus inventore
+                                        cupiditate
+                                        dicta nobis, et consequatur? Facilis natus repellat neque.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning" type="button" data-dismiss="modal">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        filterSelection("all")
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        // Show filtered elements
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        // Hide elements that are not selected
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+        // Add active class to the current control button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+
 </main>
+
 
 {% endblock%}

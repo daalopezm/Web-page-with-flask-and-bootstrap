@@ -13,6 +13,10 @@ import os
 
 app = Flask(__name__)
 
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html', error=error)
+
 @app.route('/')
 def home():
     videos = {f'video{num}': url_for('static',filename='videos/{}'.format(os.listdir('./static/videos/')[num])) for num in range(2)}
