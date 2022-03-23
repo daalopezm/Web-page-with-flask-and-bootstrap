@@ -1,3 +1,9 @@
+:root {
+    --scale-of-opacity: 0.95s;
+    --opacity: 0.08;
+  }
+
+
 .frame {
     background: #abbaab;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top,#abbaab, #ffffff );  /* Chrome 10-25, Safari 5.1-6 */
@@ -72,7 +78,7 @@
 
 a.tm-paging-link.active,
 a.tm-paging-link:hover {
-    background: #309AFD;
+    background: #696f75;
     color: white;
 }
 
@@ -104,7 +110,7 @@ a.tm-paging-link:hover {
     /*max-width: 180px;*/
     max-height: 238px;
     /*width: 25%;*/
-    background: #3085a3;
+    background: #535a53;
     text-align: center;
     cursor: pointer;
     position: relative;
@@ -171,27 +177,27 @@ a.tm-paging-link:hover {
 /*---------------*/
 
 figure.effect-chico img {
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transition: opacity var(--scale-of-opacity), -webkit-transform var(--scale-of-opacity);
+	transition: opacity var(--scale-of-opacity), transform var(--scale-of-opacity);
 	-webkit-transform: scale(1.12);
 	transform: scale(1.12);
 }
 
 figure.effect-chico:hover img {
-	opacity: 0.5;
+	opacity: var(--opacity);
 	-webkit-transform: scale(1);
 	transform: scale(1);
 }
 
 figure.effect-chico video {
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transition: opacity var(--scale-of-opacity), -webkit-transform var(--scale-of-opacity);
+	transition: opacity var(--scale-of-opacity), transform var(--scale-of-opacity);
 	-webkit-transform: scale(1.12);
 	transform: scale(1.12);
 }
 
 figure.effect-chico:hover video {
-	opacity: 0.5;
+	opacity: var(--opacity);
 	-webkit-transform: scale(1);
 	transform: scale(1);
 }
