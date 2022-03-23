@@ -6,34 +6,19 @@ To deploy again, use:
 Author: Daniel Lopez
 """
 
-from email.mime import image
-from fileinput import filename
-from flask import Flask, render_template, url_for
-import os
+from flask import Flask, render_template
+from pages.home import home
+from pages.about import about
+from pages.programming.programming import programming
 
 app = Flask(__name__)
-
+app.register_blueprint(home)
+app.register_blueprint(about, url_prefix='/about')
+app.register_blueprint(programming, url_prefix='/programming')
 
 @app.errorhandler(404)
 def not_found(error):
     return render_template('404.html', error=error)
-
-
-@app.route('/')
-def home():
-    videos = {'video0': url_for('static', filename='videos/write.mp4'),
-              'video1': url_for('static', filename='videos/code.mp4'),
-              'video2': url_for('static', filename='videos/blackhole.mp4'),
-              'video3': url_for('static', filename='videos/physics.mp4')}
-    images = {f'image{num}': url_for('static', filename='images/{}'.format(
-        os.listdir('./static/images/')[num])) for num in range(9)}
-    return render_template('index.html', **images, **videos)
-
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
 
 if __name__ == '__main__':
     app.run(debug=True)
