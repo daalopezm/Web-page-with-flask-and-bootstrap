@@ -139,11 +139,26 @@ inicio
                                 class="scrollspy-example col-sm-9 container-items" tabindex="0">
                                 <div class="filterDiv gas">
                                     <h4 id="list-item-1">Gas simulator</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa hic amet
-                                        reiciendis vero
-                                        magni quibusdam adipisci optio veritatis molestiae delectus officiis rem eius
-                                        fugiat
-                                        eveniet tenetur natus, quae quidem alias.</p>
+                                    <video class="card-img" autoplay muted loop id="video-container-programming">
+                                        <source src="{{video_programming_gases}}" type="video/mp4">
+                                    </video>
+                                    <p>
+                                    This project was an attempt to construct a gas simulator. The particles that conforms an ideal
+                                    do not interact among each other. Otherwise, a real gas has interactions among its particles. 
+                                    A possible model could be the a Coulomb force that will be seen as a repulsion force. 
+                                    To address such propose, the equations of motion of each particle was obtained from the Coulomb 
+                                    force:
+                                    \begin{equation}\label{force}
+                                        F_i(\vec{r}_i(t))= \frac{q^2}{4\pi\epsilon_0}\sum_{i\leq j}\frac{\hat{r}_i(t)}{|\vec{r}_i(t)-\vec{r}_j(t)|^2}
+                                    \end{equation}
+                                    The equation \ref{force} was used to find the velocity of each particle as:
+                                    \begin{equation}
+                                        \vec{v}_i(t)=\frac{1}{m_i}\frac{q^2}{4\pi\epsilon_0}\sum_{i\leq j}\int_0^{t} dt \frac{\hat{r}_i(t)}{|\vec{r}_i(t)-\vec{r}_j(t)|^2}+\vec{v}_i(0)
+                                    \end{equation}
+                                    where $m_i$ is the mass of each particle. $\vec{v}_i(0)$ is the initial condition of velocities.
+                                    In order to make the interface of the program, I used Tkinter, and Object Oriented Programming was used.
+                                    If you wanna see the source code in GitHub, you can click <a href="https://github.com/daalopezm/General-Gases">here</a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
