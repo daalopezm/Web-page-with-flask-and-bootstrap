@@ -14,7 +14,7 @@ inicio
 <div id="tm-video-container">
     <video autoplay muted loop id="tm-video">
         <source src="{{video0}}" type="video/mp4">
-    </video>  
+    </video>
     <i id="tm-video-control-button" class="fas fa-pause"></i>
 </div>
 {%endblock%}
@@ -121,7 +121,7 @@ inicio
                 <div class="modal-header">
                     <a href="{{url_for('programming.programming_page')}}">
                         <h5 id="tituloVentana">Programming projects</h5>
-                    </a>                    
+                    </a>
                     <button class="close" data-dismiss="modal" aria-label="Cerrar">
                         <span arria-hidden="true">&times;</span>
                     </button>
@@ -140,55 +140,79 @@ inicio
                             <div bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0"
                                 class="scrollspy-example col-sm-9 container-items" tabindex="0">
                                 <div class="filterDiv gas">
-                                    <h4 id="list-item-1">Gas simulator (<a href="https://github.com/daalopezm/General-Gases" target="_blank">Link to GitHub</a>)</h4>
+                                    <h4 id="list-item-1">Gas simulator (<a
+                                            href="https://github.com/daalopezm/General-Gases" target="_blank">Link to
+                                            GitHub</a>)</h4>
                                     <video class="card-img" autoplay muted loop id="video-container-programming">
                                         <source src="{{video_programming_gases}}" type="video/mp4">
                                     </video>
-                                    <p>
-                                        <h6>The idea</h6>
-                                    This project was an attempt to construct a gas simulator. The particles that conforms an ideal
-                                    do not interact among each other. Otherwise, a real gas has interactions among its particles. 
-                                    A possible model could be the a Coulomb force that will be seen as a repulsion force. 
-                                    To address such propose, the equations of motion of each particle were obtained from the Coulomb 
-                                    force:
-                                    \begin{equation}\label{force}
-                                        F_i(\vec{r}_i(t))= \frac{q^2}{4\pi\epsilon_0}\sum_{i\leq j}\frac{\hat{r}_i(t)}{|\vec{r}_i(t)-\vec{r}_j(t)|^2}
-                                    \end{equation}
-                                    The equation \ref{force} was used to find the velocity of each particle as:
-                                    \begin{equation}
-                                        \vec{v}_i(t)=\frac{1}{m_i}\frac{q^2}{4\pi\epsilon_0}\sum_{i\leq j}\int_0^{t} dt \frac{\hat{r}_i(t)}{|\vec{r}_i(t)-\vec{r}_j(t)|^2}+\vec{v}_i(0)
-                                    \end{equation}
-                                    where $m_i$ is the mass of each particle. $\vec{v}_i(0)$ is the initial condition of velocities.
 
-                                    <br>
+                                    <h6>The idea</h6>
+                                    <p>This project was an attempt to construct a gas simulator. The particles that
+                                        conforms an ideal
+                                        do not interact among each other. Otherwise, a real gas has interactions among
+                                        its particles.
+                                        A possible model could be the a Coulomb force that will be seen as a repulsion
+                                        force.
+                                        To address such propose, the equations of motion of each particle were obtained
+                                        from the Coulomb
+                                        force:
+                                        \begin{equation}\label{force}
+                                        F_i(\vec{r}_i(t))= \frac{q^2}{4\pi\epsilon_0}\sum_{i<
+                                        j}\frac{\hat{r}_i(t)}{|\vec{r}_i(t)-\vec{r}_j(t)|^2}
+                                        \end{equation}
+                                        The equation \ref{force} was used to find the velocity of each particle as:
+                                        \begin{equation}
+                                        \vec{v}_i(t)=\frac{1}{m_i}\frac{q^2}{4\pi\epsilon_0}\sum_{i< j}\int_0^{t} dt
+                                        \frac{\hat{r}_i(t)}{|\vec{r}_i(t)-\vec{r}_j(t)|^2}+\vec{v}_i(0)
+                                        \end{equation}
+                                        where $m_i$ is the mass of each particle. $\vec{v}_i(0)$ is the initial
+                                        condition of velocities.</p>
+
+
                                     <h6>Skills developed</h6>
-                                    In order to make the interface of the program, I used Tkinter, and Object Oriented Programming was used.
-                                    Some basic knoledge of  physics were used, like electrostatics and integration. The velocities are inserted into 
-                                    the object function move of Tkinter. This project reinforce my knowledge in basic Python.
-                                    If you wanna see the source code in GitHub, you can click <a href="https://github.com/daalopezm/General-Gases" target="_blank">here</a>
+                                    <p>In order to make the interface of the program, I used Tkinter, and Object
+                                        Oriented Programming was used.
+                                        Some basic knoledge of physics were used, like electrostatics and integration.
+                                        The velocities are inserted into
+                                        the object function move of Tkinter. This project reinforce my knowledge in
+                                        basic Python.
+                                        If you wanna see the source code in GitHub, you can click <a
+                                            href="https://github.com/daalopezm/General-Gases" target="_blank">here</a>
                                     </p>
                                 </div>
                                 <div class="filterDiv portfolio">
-                                    <h4 id="list-item-1">Portfolio Webpage (<a href="https://github.com/daalopezm/Web-page-with-flask-and-bootstrap" target="_blank">Link to GitHub</a>)</h4>
+                                    <h4 id="list-item-1">Portfolio Webpage (<a
+                                            href="https://github.com/daalopezm/Web-page-with-flask-and-bootstrap"
+                                            target="_blank">Link to GitHub</a>)</h4>
                                     <figure>
                                         <img src="{{image_programming_website}}" class="card-img-top" alt="...">
                                         <figcaption>
                                             <p>Current website</p>
                                         </figcaption>
                                     </figure>
-                                    <p>
+
                                     <h6>The idea</h6>
-                                    This page that you are watching, was made with the proppose to show my skills using Flask, Bootstrap, HTML, and CSS.
-                                    The images that are displayed, are generated with the neural network VQGAN+CLIP, by Katherine Crowson. A copy of such 
-                                    notebook in Colab, can be found <a href="https://colab.research.google.com/drive/1go6YwMFe5MX6XM9tv-cnQiSTU50N9EeT" target="_blank">here</a><div class=""></div>
-                                    Some effects, were extracted from different templates and addapted to this website. 
-                                    <br>
+                                    <p>This page that you are watching, was made with the proppose to show my skills
+                                        using Flask, Bootstrap, HTML, and CSS.
+                                        The images that are displayed, are generated with the neural network VQGAN+CLIP,
+                                        by Katherine Crowson. A copy of such
+                                        notebook in Colab, can be found <a
+                                            href="https://colab.research.google.com/drive/1go6YwMFe5MX6XM9tv-cnQiSTU50N9EeT"
+                                            target="_blank">here</a>
+                                    <div class=""></div>
+                                    Some effects, were extracted from different templates and addapted to this website.
+                                    </p>
                                     <h6>Skills developed</h6>
-                                    I improve my intermediate skills in python, with the propose to deploy IA models online in order to impress my future 
-                                    recluters. Of course, I hope to do it with a dynamic website, instead of a static website, like the one that you are watching.
-                                    My future blog, will be deployed using flask, because it is very symple and at some point scalable. And because, it is written in
-                                    python, DeepLearning and MechineLearning applications could run natively. 
-                                     <a href="https://github.com/daalopezm/Web-page-with-flask-and-bootstrap" target="_blank">here</a>
+                                    <p>I improve my intermediate skills in python, with the propose to deploy IA models
+                                        online in order to impress my future
+                                        recluters. Of course, I hope to do it with a dynamic website, instead of a
+                                        static website, like the one that you are watching.
+                                        My future blog, will be deployed using flask, because it is very symple and at
+                                        some point scalable. And because, it is written in
+                                        python, DeepLearning and MechineLearning applications could run natively.
+                                        <a href="https://github.com/daalopezm/Web-page-with-flask-and-bootstrap"
+                                            target="_blank">here</a>
                                     </p>
                                 </div>
                             </div>
@@ -346,11 +370,13 @@ inicio
                                 <a class="btn-in list-group-item list-group-item-action"
                                     onclick="filterSelection('QFT')">YouTube Course in QFT (Spanish)</a>
                                 <a class="btn-in list-group-item list-group-item-action"
-                                    onclick="filterSelection('cbqft')">YouTube Course in QFT on curved backgrounds (Spanish)</a>
+                                    onclick="filterSelection('cbqft')">YouTube Course in QFT on curved backgrounds
+                                    (Spanish)</a>
                                 <a class="btn-in list-group-item list-group-item-action"
                                     onclick="filterSelection('stringth')">YouTube Course in String Theory (Spanish)</a>
                                 <a class="btn-in list-group-item list-group-item-action"
-                                    onclick="filterSelection('statisticaldeep')">Statistical Mechanics of DeepLearning</a>
+                                    onclick="filterSelection('statisticaldeep')">Statistical Mechanics of
+                                    DeepLearning</a>
                             </div>
                             <div bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0"
                                 class="scrollspy-example col-sm-9 container-items" tabindex="0">

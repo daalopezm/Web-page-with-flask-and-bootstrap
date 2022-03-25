@@ -6,5 +6,46 @@ Programming
 {% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/programming.css')}}">
 <h1>Programming Page</h1>
+<div>
+    <h4 id="list-item-1">Gas simulator (<a href="https://github.com/daalopezm/General-Gases" target="_blank">Link to
+            GitHub</a>)</h4>
+    <video class="card-img" autoplay muted loop id="video-container-programming">
+        <source src="{{video_programming_gases}}" type="video/mp4">
+    </video>
+    <h6>The idea</h6>
+    <p>This project was an attempt to construct a gas simulator. The particles that conforms an ideal
+        do not interact among each other. Otherwise, a real gas has interactions among its particles.
+        A possible model could be the a Coulomb force that will be seen as a repulsion force.
+        To address such propose, the equations of motion of each particle were obtained from the Coulomb
+        force:
+        \begin{equation}\label{force}
+        F_i(\vec{r}_i(t))= \frac{q^2}{4\pi\epsilon_0}\sum_{i < j}\frac{\hat{r}_i(t)}{|\vec{r}_i(t)-\vec{r}_j(t)|^2}
+            \end{equation} The equation \ref{force} was used to find the velocity of each particle as: \begin{equation}
+            \vec{v}_i(t)=\frac{1}{m_i}\frac{q^2}{4\pi\epsilon_0}\sum_{i < j}\int_0^{t} dt
+            \frac{\hat{r}_i(t)}{|\vec{r}_i(t)-\vec{r}_j(t)|^2}+\vec{v}_i(0)
+        \end{equation} where $m_i$ is the mass of
+        each particle. $\vec{v}_i(0)$ is the initial condition of velocities. 
+    </p>
+
+
+    <h6>How it works?</h6>
+    <p>Yo must insert in the field the number of particles that you wanna render. Then, click "enter"</p>
+    <figure>
+        <img src="{{image_programming_gas_explanation_1}}" class="explanation-image" alt="...">
+    </figure>
+    <p>In the dropdown menu, select the interaction and click in simulate. The fastest particle, more red it is and the
+        darkest are slower than the red one
+    </p>
+
+    <h6>Skills developed</h6>
+    <p>In order to make the interface of the program, I used Tkinter, and Object Oriented Programming was used.
+        Some basic knoledge of physics were used, like electrostatics and integration. The velocities are
+        inserted into
+        the object function move of Tkinter. This project reinforce my knowledge in basic Python.
+        If you wanna see the source code in GitHub, you can click <a
+            href="https://github.com/daalopezm/General-Gases" target="_blank">here</a>
+    </p>
+</div>
 {% endblock %}
