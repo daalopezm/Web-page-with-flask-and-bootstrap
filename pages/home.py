@@ -13,6 +13,7 @@ def home_page():
               'video2': url_for('static', filename='videos/blackhole.mp4'),
               'video3': url_for('static', filename='videos/physics.mp4')}
     videos_programming = {'video_programming_gases': url_for('static', filename='videos/programming/Gases.mp4')}
+    images_programming = {'image_programming_website': url_for('static', filename='videos/programming/website.png')}
     images = {f'image{num}': url_for('static', filename='images/{}'.format(
         os.listdir('./static/images/')[num])) for num in range(9)}
-    return render_template('index.html', **images, **videos, **videos_programming)
+    return render_template('index.html', **images, **videos, **videos_programming, **images_programming)
