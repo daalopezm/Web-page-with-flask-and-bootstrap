@@ -7,11 +7,10 @@ Programming
 <link rel="stylesheet" href="{{url_for('static', filename='css/programming.css')}}">
 
 {% block titulo %}
-<h1>Programming Page</h1>
+<h1>Deep Learning</h1>
 {% endblock %}
 
 {% block content %}
-
 <div>
     <div class="modal-body" data-spy="scroll" data-offset="20">
         <div class="container">
@@ -27,27 +26,14 @@ Programming
                     class="scrollspy-example col-sm-9" tabindex="0">
                     <div class="filterDiv gas">
                         <div>
-                            <h4 id="list-item-1">Gas simulator (<a href="https://github.com/daalopezm/General-Gases"
+                            <h4 id="list-item-1">Simple Neural Network with TensorFlow 2.8(<a href="https://github.com/daalopezm/Simple_Neural_Network"
                                     target="_blank">Link to
                                     GitHub</a>)</h4>
                             <video class="card-img" autoplay muted loop id="video-container-programming">
-                                <source src="{{video_programming_gases}}" type="video/mp4">
+                                <source src="{{video_dl_simpleNN}}" type="video/mp4">
                             </video>
                             <h6>The idea</h6>
-                            <p>This project was an attempt to construct a gas simulator. The particles that conforms an
-                                ideal do not interact among each other. Otherwise, a real gas has interactions among its
-                                particles.
-                                A possible model could be the a Coulomb force that will be seen as a repulsion force.
-                                To address such propose, the equations of motion of each particle were obtained from the
-                                Coulomb force:
-                                \begin{equation}\label{force}
-                                F_i(\vec{r}_i(t))= \frac{q^2}{4\pi\epsilon_0}\sum_{i <
-                                    j}\frac{\hat{r}_i(t)}{|\vec{r}_i(t)-\vec{r}_j(t)|^2} \end{equation} The equation
-                                    \ref{force} was used to find the velocity of each particle as: \begin{equation}
-                                    \vec{v}_i(t)=\frac{1}{m_i}\frac{q^2}{4\pi\epsilon_0}\sum_{i < j}\int_0^{t} dt
-                                    \frac{\hat{r}_i(t)}{|\vec{r}_i(t)-\vec{r}_j(t)|^2}+\vec{v}_i(0) \end{equation} where
-                                    $m_i$ is the mass of each particle. $\vec{v}_i(0)$ is the initial condition of
-                                    velocities. 
+                            <p>This project was an attempt to construct a simple Neural Network 
                             </p>
 
                             <h6>How it works?</h6>
@@ -162,4 +148,4 @@ Programming
         }
     </script>
 
-    {% endblock %}
+{% endblock %}

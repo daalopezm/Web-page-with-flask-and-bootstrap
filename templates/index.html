@@ -59,7 +59,7 @@ inicio
         </div>
         <div class="col p-2">
             <div class="card" style="width: 15rem;">
-                <figure class="effect-chico tm-gallery-item" data-toggle="modal" data-target="#modalDeepLearning">
+                <figure class="effect-chico tm-gallery-item" data-toggle="modal" data-target="#modalMachineLearning">
                     <img src="{{image3}}" class="card-img-top" alt="...">
                     <figcaption>
                         <p>Predictions from data and visualization.</p>
@@ -75,7 +75,7 @@ inicio
         </div>
         <div class="col p-2">
             <div class="card" style="width: 15rem;">
-                <figure class="effect-chico tm-gallery-item" data-toggle="modal" data-target="#modalDeepLearning">
+                <figure class="effect-chico tm-gallery-item" data-toggle="modal" data-target="#modalPhysics">
                     <video class="card-img-top" autoplay muted loop id="tm-video">
                         <source src="{{video2}}" type="video/mp4">
                     </video>
@@ -93,7 +93,7 @@ inicio
         </div>
         <div class="col p-2">
             <div class="card" style="width: 15rem;">
-                <figure class="effect-chico tm-gallery-item" data-toggle="modal" data-target="#modalDeepLearning">
+                <figure class="effect-chico tm-gallery-item" data-toggle="modal" data-target="#modalMechatronic">
                     <video class="card-img-top" autoplay muted loop id="tm-video">
                         <source src="{{video3}}" type="video/mp4">
                     </video>
@@ -233,7 +233,9 @@ inicio
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 id="tituloVentana">DeepLearning projects</h5>
+                    <a href="{{url_for('deeplearning.deeplearning_page')}}">
+                        <h5 id="tituloVentana">DeepLearning projects</h5>
+                    </a>                    
                     <button class="close" data-dismiss="modal" aria-label="Cerrar">
                         <span arria-hidden="true">&times;</span>
                     </button>
