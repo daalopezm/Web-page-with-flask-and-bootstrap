@@ -2,7 +2,7 @@
 
 {% block title %}
 {{ super() }}
-Programming
+DeepLearning
 {% endblock %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/programming.css')}}">
 
@@ -17,14 +17,13 @@ Programming
             <div class="row">
                 <div id="list-example" class="list-group col-sm-3">
                     <a class="btn-in list-group-item list-group-item-action" onclick="filterSelection('all')">All</a>
-                    <a class="btn-in list-group-item list-group-item-action" onclick="filterSelection('gas')">Gas
-                        simulator</a>
+                    <a class="btn-in list-group-item list-group-item-action" onclick="filterSelection('neu')">Simple Neural Network</a>
                     <a class="btn-in list-group-item list-group-item-action"
                         onclick="filterSelection('portfolio')">Portfolio Webpage</a>
                 </div>
                 <div bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0"
                     class="scrollspy-example col-sm-9" tabindex="0">
-                    <div class="filterDiv gas">
+                    <div class="filterDiv neu">
                         <div>
                             <h4 id="list-item-1">Simple Neural Network with TensorFlow 2.8(<a href="https://github.com/daalopezm/Simple_Neural_Network"
                                     target="_blank">Link to
