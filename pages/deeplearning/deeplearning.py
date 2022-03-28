@@ -4,5 +4,6 @@ deeplearning = Blueprint('deeplearning',__name__,static_folder='../.././.././sta
 
 @deeplearning.route('/')
 def deeplearning_page():
-    videos_deeplearning = {'video_dl_simpleNN': url_for('static', filename='videos/deeplearning/neuralnetwork.mp4')}
+    videos_deeplearning = {'video_dl_simpleNN_0': url_for('static', filename='videos/deeplearning/neuralnetwork0.mp4'),
+        'video_dl_simpleNN_1': url_for('static', filename='videos/deeplearning/neuralnetwork1.mp4')}
     return render_template('deeplearning.html', **videos_deeplearning)
