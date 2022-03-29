@@ -9,8 +9,111 @@
 <h1>My blog</h1>
 {% endblock %}
 
+<link rel="stylesheet" href="{{url_for('static', filename='css/programming.css')}}">
+{% block content %}
 
-{% block content%}
-<p>Here, you have some topics related with my passions.</p>
-{% endblock %}
+<div>
+    <div class="modal-body" data-spy="scroll" data-offset="20">
+        <div class="container">
+            <div class="row">
+                <div id="list-example" class="list-group col-sm-3">
+                    <a class="btn-in list-group-item list-group-item-action" onclick="filterSelection('all')">All</a>
+                    <a class="btn-in list-group-item list-group-item-action" onclick="filterSelection('sign')">Creating a Sign Lenguaje detector</a>
+                    <a class="btn-in list-group-item list-group-item-action" onclick="filterSelection('databases')">Learning Databases</a>
+                </div>
+                <div bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0"
+                    class="scrollspy-example col-sm-9" tabindex="0">
+                    <div class="filterDiv sign">
+                        <div>
+                            <h4 id="list-item-1">Creating a Sign Lenguaje detector (<a href="https://github.com/daalopezm/General-Gases"
+                                    target="_blank">Link to
+                                    GitHub</a>)</h4>
+                            <p>
+
+                                Here I will describe my first approach to an application with machine learning. First of all we must 
+                                <pre>
+                                    <code>b={'name'='daniel', 'edad'=26}</code>
+                                </pre>
+                                <div class="container">
+                                    <script src="https://gist.github.com/daalopezm/e237778eb74c8ded4f484a9610a34555.js"></script>
+                                </div>
+                                </p>
+                        </div>
+                    </div>
+                    <div class="filterDiv databases">
+                        <div>
+                            <h4 id="list-item-1">Learning Databases </h4>
+                            <figure class="explanation-image-huge">
+                                <img src="{{image1}}" class="img-fluid img-rounded" alt="">
+                            </figure>
+                            <p>Databases Seems to be an abstract concept for me, until I feel that I requiered. As a selfthaught person, 
+                                I haven't share in an industrial enviroment, hence my lack of knowledge. But, owing to I wanna write multiple
+                                entries to this blog. It seems that is not a good practice stack HTML files into a folder, and hope that 
+                                it works properly. I seems that a database should be used. Seems, basic but not for the begginer, namely me. 
+                                I have to learn about databases, so lets start with MySQL. </p>
+                                
+                                
+                                <pre>
+                                    <code>b={'name'='daniel', 'edad'=26}</code>
+                                </pre>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        filterSelection("all")
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        // Show filtered elements
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        // Hide elements that are not selected
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+        // Add active class to the current control button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+
+    {% endblock %}
 
