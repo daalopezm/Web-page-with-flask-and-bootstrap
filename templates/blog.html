@@ -13,58 +13,64 @@
 
 <link rel="stylesheet" href="{{url_for('static', filename='css/programming.css')}}">
 {% block content %}
-<nav class="navbar navbar-expand-lg navbar-light list-group">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">My interests</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item btn-in">
-            <a class="nav-link " aria-current="page" href="#">Programming</a>
-          </li>
-          <li class="nav-item btn-in">
-            <a class="nav-link" href="#">DeepLearning</a>
-          </li>
-          <li class="nav-item btn-in">
-            <a class="nav-link" href="#">MachineLearning</a>
-          </li>
-          <li class="nav-item btn-in">
-            <a class="nav-link" href="#">Physics</a>
-          </li>
-          <li class="nav-item btn-in">
-            <a class="nav-link" href="#">Mechatronics</a>
-          </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Programming <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">DeepLearning</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">MachineLearning</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Physics</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Mechatronics</a>
+            </li>
         </ul>
-      </div>
     </div>
-  </nav>
+</nav>
 <div>
     <div class="modal-body" data-spy="scroll" data-offset="20">
         <div class="container">
             <div class="row">
                 <div id="list-example" class="list-group col-sm-3">
                     <a class="btn-in list-group-item list-group-item-action" onclick="filterSelection('all')">All</a>
-                    <a class="btn-in list-group-item list-group-item-action" onclick="filterSelection('sign')">Creating a Sign Lenguaje detector</a>
-                    <a class="btn-in list-group-item list-group-item-action" onclick="filterSelection('databases')">Learning Databases</a>
+                    <a class="btn-in list-group-item list-group-item-action" onclick="filterSelection('sign')">Creating
+                        a Sign Lenguaje detector</a>
+                    <a class="btn-in list-group-item list-group-item-action"
+                        onclick="filterSelection('databases')">Learning Databases</a>
                 </div>
                 <div bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0"
                     class="scrollspy-example col-sm-9" tabindex="0">
                     <div class="filterDiv sign">
                         <div>
-                            <h4 id="list-item-1">Creating a Sign Lenguaje detector (<a href="https://github.com/daalopezm/General-Gases"
-                                    target="_blank">Link to
+                            <h4 id="list-item-1">Creating a Sign Lenguaje detector (<a
+                                    href="https://github.com/daalopezm/General-Gases" target="_blank">Link to
                                     GitHub</a>)</h4>
                             <p>
 
-                                Here I will describe my first approach to an application with machine learning. First of all we must 
-                                <pre>
+                                Here I will describe my first approach to an application with machine learning. First of
+                                all we must
+                            <pre>
                                     <code>b={'name'='daniel', 'edad'=26}</code>
                                 </pre>
-                                <div class="container">
-                                    <script src="https://gist.github.com/daalopezm/e237778eb74c8ded4f484a9610a34555.js"></script>
-                                </div>
-                                </p>
+                            <div class="container">
+                                <script
+                                    src="https://gist.github.com/daalopezm/e237778eb74c8ded4f484a9610a34555.js"></script>
+                            </div>
+                            </p>
                         </div>
                     </div>
                     <div class="filterDiv databases">
@@ -73,18 +79,22 @@
                             <figure class="explanation-image-huge">
                                 <img src="{{image1}}" class="img-fluid img-rounded" alt="">
                             </figure>
-                            <p>Databases Seems to be an abstract concept for me, until I feel that I requiered. As a selfthaught person, 
-                                I haven't share in an industrial enviroment, hence my lack of knowledge. But, owing to I wanna write multiple
-                                entries to this blog. It seems that is not a good practice stack HTML files into a folder, and hope that 
-                                it works properly. I seems that a database should be used. Seems, basic but not for the begginer, namely me. 
+                            <p>Databases Seems to be an abstract concept for me, until I feel that I requiered. As a
+                                selfthaught person,
+                                I haven't share in an industrial enviroment, hence my lack of knowledge. But, owing to I
+                                wanna write multiple
+                                entries to this blog. It seems that is not a good practice stack HTML files into a
+                                folder, and hope that
+                                it works properly. I seems that a database should be used. Seems, basic but not for the
+                                begginer, namely me.
                                 I have to learn about databases, so lets start with MySQL. </p>
-                                
-                                
-                                <pre>
+
+
+                            <pre>
                                     <code>b={'name'='daniel', 'edad'=26}</code>
                                 </pre>
 
-                            
+
                         </div>
                     </div>
                 </div>
@@ -143,4 +153,3 @@
     </script>
 
     {% endblock %}
-
