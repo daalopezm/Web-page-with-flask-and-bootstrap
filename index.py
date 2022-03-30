@@ -19,7 +19,7 @@ DB_NAME = "database.db"
 app = Flask(__name__)
 app.register_blueprint(home)
 app.register_blueprint(about, url_prefix='/about')
-app.register_blueprint(programming, url_prefix='/programming')
+#app.register_blueprint(programming, url_prefix='/programming')
 app.register_blueprint(deeplearning, url_prefix='/deeplearning')
 app.register_blueprint(blog, url_prefix='/blog')
 
@@ -27,6 +27,7 @@ app.register_blueprint(blog, url_prefix='/blog')
 # app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
 
 @app.errorhandler(404)
+@app.errorhandler(405)
 def not_found(error):
     return render_template('404.html', error=error)
 
