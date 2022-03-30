@@ -13,7 +13,32 @@
 
 <link rel="stylesheet" href="{{url_for('static', filename='css/programming.css')}}">
 {% block content %}
-
+<nav class="navbar navbar-expand-lg navbar-light list-group">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item btn-in">
+            <a class="nav-link " aria-current="page" href="#">Programming</a>
+          </li>
+          <li class="nav-item btn-in">
+            <a class="nav-link" href="#">DeepLearning</a>
+          </li>
+          <li class="nav-item btn-in">
+            <a class="nav-link" href="#">MachineLearning</a>
+          </li>
+          <li class="nav-item btn-in">
+            <a class="nav-link" href="#">Physics</a>
+          </li>
+          <li class="nav-item btn-in">
+            <a class="nav-link" href="#">Mechatronics</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 <div>
     <div class="modal-body" data-spy="scroll" data-offset="20">
         <div class="container">
