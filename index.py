@@ -10,8 +10,7 @@ from flask import Flask, render_template
 from pages.home import home
 from pages.about import about
 from pages.blog import blog
-from pages.programming.programming import programming
-from pages.deeplearning.deeplearning import deeplearning
+
 from os import path
 
 DB_NAME = "database.db"
@@ -19,9 +18,8 @@ DB_NAME = "database.db"
 app = Flask(__name__)
 app.register_blueprint(home)
 app.register_blueprint(about, url_prefix='/about')
-#app.register_blueprint(programming, url_prefix='/programming')
-app.register_blueprint(deeplearning, url_prefix='/deeplearning')
 app.register_blueprint(blog, url_prefix='/blog')
+#FileSystemLoader(['/templates', '/templates/blog'])
 
 # app.config['SECRET_KEY'] = 'nani21'
 # app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'

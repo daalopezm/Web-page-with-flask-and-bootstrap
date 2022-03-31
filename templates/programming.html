@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'blog.html' %}
 
 {% block title %}
 {{ super() }}
@@ -6,160 +6,31 @@ Programming
 {% endblock %}
 
 {% block titulo %}
-<h1>Programming Page</h1>
+{{super()}}
+<h2>Programming Page</h2>
 {% endblock %}
 
 <link rel="stylesheet" href="{{url_for('static', filename='css/programming.css')}}">
-{% block content %}
 
+{% block contentblog %}
 <div>
     <div class="modal-body" data-spy="scroll" data-offset="20">
         <div class="container">
             <div class="row">
                 <div id="list-example" class="list-group col-sm-3">
-                    <a class="btn-in list-group-item list-group-item-action" onclick="filterSelection('all')">All</a>
-                    <a class="btn-in list-group-item list-group-item-action" onclick="filterSelection('gas')">Gas
+                    <a href="{{url_for('blog.programming.programming_gas_simulator.programming_gas_simulator_page')}}"
+                        class="btn-in list-group-item list-group-item-action">Gas
                         simulator</a>
-                    <a class="btn-in list-group-item list-group-item-action"
-                        onclick="filterSelection('portfolio')">Portfolio Webpage</a>
+                    <a href="{{url_for('blog.programming.programming_portfolio.programming_portfolio_page')}}"
+                        class="btn-in list-group-item list-group-item-action">Portfolio Webpage</a>
                 </div>
                 <div bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0"
                     class="scrollspy-example col-sm-9" tabindex="0">
-                    <div class="filterDiv gas">
-                        <div>
-                            <h4 id="list-item-1">Gas simulator (<a href="https://github.com/daalopezm/General-Gases"
-                                    target="_blank">Link to
-                                    GitHub</a>)</h4>
-                            <video class="card-img" autoplay muted loop id="video-container-programming">
-                                <source src="{{video_programming_gases}}" type="video/mp4">
-                            </video>
-                            <h6>The idea</h6>
-                            <p>This project was an attempt to construct a gas simulator. The particles that conforms an
-                                ideal do not interact among each other. Otherwise, a real gas has interactions among its
-                                particles.
-                                A possible model could be the a Coulomb force that will be seen as a repulsion force.
-                                To address such propose, the equations of motion of each particle were obtained from the
-                                Coulomb force:
-                                \begin{equation}\label{force}
-                                F_i(\vec{r}_i(t))= \frac{q^2}{4\pi\epsilon_0}\sum_{i <
-                                    j}\frac{\hat{r}_i(t)}{|\vec{r}_i(t)-\vec{r}_j(t)|^2} \end{equation} The equation
-                                    \ref{force} was used to find the velocity of each particle as: \begin{equation}
-                                    \vec{v}_i(t)=\frac{1}{m_i}\frac{q^2}{4\pi\epsilon_0}\sum_{i < j}\int_0^{t} dt
-                                    \frac{\hat{r}_i(t)}{|\vec{r}_i(t)-\vec{r}_j(t)|^2}+\vec{v}_i(0) \end{equation} where
-                                    $m_i$ is the mass of each particle. $\vec{v}_i(0)$ is the initial condition of
-                                    velocities. 
-                            </p>
+                    {% block programming %}
 
-                            <h6>How it works?</h6>
-                            <p>Yo must insert in the field the number of particles that you wanna render. Then,
-                                click "enter"</p>
-                            <figure>
-                                <img src="{{image_programming_gas_explanation_1}}" class="explanation-image"
-                                    alt="...">
-                            </figure>
-                            <p>In the dropdown menu, select the interaction and click in simulate. The fastest
-                                particle, more red it is and the darkest are slower than the red one.
-                            </p>
-
-                            <h6>Skills developed</h6>
-                            <p>In order to make the interface of the program, I used Tkinter, and Object
-                                Oriented Programming was used.
-                                Some basic knoledge of physics were used, like electrostatics and integration.
-                                The velocities are
-                                inserted into
-                                the object function move of Tkinter. This project reinforce my knowledge in
-                                basic Python.
-                                If you wanna see the source code in GitHub, you can click <a
-                                    href="https://github.com/daalopezm/General-Gases" target="_blank">here</a>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="filterDiv portfolio">
-                        <h4 id="list-item-1">Portfolio Webpage (<a
-                                href="https://github.com/daalopezm/Web-page-with-flask-and-bootstrap"
-                                target="_blank">Link to GitHub</a>)</h4>
-                        <figure>
-                            <img src="{{image_programming_website}}" class="card-img-top" alt="...">
-                            <figcaption>
-                                <p>Current website</p>
-                            </figcaption>
-                        </figure>
-
-                        <h6>The idea</h6>
-                        <p>This page that you are watching, was made with the proppose to show my skills
-                            using Flask, Bootstrap, HTML, and CSS.
-                            The images that are displayed, are generated with the neural network VQGAN+CLIP,
-                            by Katherine Crowson. A copy of such
-                            notebook in Colab, can be found <a
-                                href="https://colab.research.google.com/drive/1go6YwMFe5MX6XM9tv-cnQiSTU50N9EeT"
-                                target="_blank">here</a> Some effects, were extracted from different templates and addapted to this website.
-                        </p>
-                        <h6>Skills developed</h6>
-                        <p>I improve my intermediate skills in python, with the propose to deploy IA models
-                            online in order to impress my future
-                            recluters. Of course, I hope to do it with a dynamic website, instead of a
-                            static website, like the one that you are watching.
-                            My future blog, will be deployed using flask, because it is very symple and at
-                            some point scalable. And because, it is written in
-                            python, DeepLearning and MechineLearning applications could run natively.
-                            <a href="https://github.com/daalopezm/Web-page-with-flask-and-bootstrap"
-                                target="_blank">here</a>
-                        </p>
-                    </div>
+                    {% endblock %}
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        filterSelection("all")
-        function filterSelection(c) {
-            var x, i;
-            x = document.getElementsByClassName("filterDiv");
-            if (c == "all") c = "";
-            // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-            for (i = 0; i < x.length; i++) {
-                w3RemoveClass(x[i], "show");
-                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-            }
-        }
-
-        // Show filtered elements
-        function w3AddClass(element, name) {
-            var i, arr1, arr2;
-            arr1 = element.className.split(" ");
-            arr2 = name.split(" ");
-            for (i = 0; i < arr2.length; i++) {
-                if (arr1.indexOf(arr2[i]) == -1) {
-                    element.className += " " + arr2[i];
-                }
-            }
-        }
-
-        // Hide elements that are not selected
-        function w3RemoveClass(element, name) {
-            var i, arr1, arr2;
-            arr1 = element.className.split(" ");
-            arr2 = name.split(" ");
-            for (i = 0; i < arr2.length; i++) {
-                while (arr1.indexOf(arr2[i]) > -1) {
-                    arr1.splice(arr1.indexOf(arr2[i]), 1);
-                }
-            }
-            element.className = arr1.join(" ");
-        }
-
-        // Add active class to the current control button (highlight it)
-        var btnContainer = document.getElementById("myBtnContainer");
-        var btns = btnContainer.getElementsByClassName("btn");
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function () {
-                var current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(" active", "");
-                this.className += " active";
-            });
-        }
-    </script>
-
-    {% endblock %}
+{% endblock %}
