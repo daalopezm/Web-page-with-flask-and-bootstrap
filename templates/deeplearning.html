@@ -1,4 +1,5 @@
 {% extends 'blog.html' %}
+{% import 'macro.html' as macro %}
 
 {% block title %}
 {{ super() }}
@@ -8,7 +9,7 @@ DeepLearning
 
 {% block titulo %}
 {{super()}}
-<h2>Deep Learning</h2>
+<h3>Deep Learning</h3>
 {% endblock %}
 
 {% block contentblog %}
@@ -18,10 +19,9 @@ DeepLearning
         <div class="container">
             <div class="row">
                 <div id="list-example" class="list-group col-sm-3">
-                    <a href="{{url_for('blog.deeplearning.deeplearning_simple_neural_network.deeplearning_simple_neural_network_page')}}"
-                        class="btn-in list-group-item list-group-item-action">Simple Neural Network</a>
-                    <a href="{{url_for('blog.deeplearning.deeplearning_sign_detection.deeplearning_sign_detection_page')}}"
-                        class="btn-in list-group-item list-group-item-action">Sign detection</a>
+                    {% for titulo, pagina in pages.items() %}
+                    {{macro.lateral_bar(titulo, pagina)}}
+                    {% endfor %}
                 </div>
                 <div bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0"
                     class="scrollspy-example col-sm-9" tabindex="0">
