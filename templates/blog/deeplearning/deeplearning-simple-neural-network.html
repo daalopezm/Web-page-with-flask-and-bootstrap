@@ -1,0 +1,40 @@
+{% extends 'deeplearning.html'%}
+
+{% block deeplearning %}
+<div>
+    <h4 id="list-item-1">Simple Neural Network with TensorFlow 2.8 (<a
+            href="https://github.com/daalopezm/Simple_Neural_Network" target="_blank">Link to
+            GitHub</a>)</h4>
+    <video class="card-img" autoplay muted loop id="video-container-programming">
+        <source src="{{video_dl_simpleNN_0}}" type="video/mp4">
+    </video>
+    <video class="card-img" autoplay muted loop id="video-container-programming">
+        <source src="{{video_dl_simpleNN_1}}" type="video/mp4">
+    </video>
+    <h6>The idea</h6>
+    <p>This project was an attempt to construct a simple Neural Network
+    </p>
+
+    <h6>How it works?</h6>
+    <p>Yo must insert in the field the number of particles that you wanna render. Then,
+        click "enter"</p>
+    <figure>
+        <img src="{{image_programming_gas_explanation_1}}" class="explanation-image" alt="...">
+    </figure>
+    <p>In the dropdown menu, select the interaction and click in simulate. The fastest
+        particle, more red it is and the darkest are slower than the red one.
+    </p>
+
+    <h6>Skills developed</h6>
+    <p>In order to make the interface of the program, I used Tkinter, and Object
+        Oriented Programming was used.
+        Some basic knoledge of physics were used, like electrostatics and integration.
+        The velocities are
+        inserted into
+        the object function move of Tkinter. This project reinforce my knowledge in
+        basic Python.
+        If you wanna see the source code in GitHub, you can click <a href="https://github.com/daalopezm/General-Gases"
+            target="_blank">here</a>
+    </p>
+</div>
+{% endblock %}

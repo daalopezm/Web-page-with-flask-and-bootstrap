@@ -1,0 +1,36 @@
+{% extends 'programming.html' %}
+
+{% block programming %}
+<div>
+    <h4 id="list-item-1">Portfolio Webpage (<a
+            href="https://github.com/daalopezm/Web-page-with-flask-and-bootstrap"
+            target="_blank">Link to GitHub</a>)</h4>
+    <figure>
+        <img src="{{image_programming_website}}" class="card-img-top" alt="...">
+        <figcaption>
+            <p>Current website</p>
+        </figcaption>
+    </figure>
+
+    <h6>The idea</h6>
+    <p>This page that you are watching, was made with the proppose to show my skills
+        using Flask, Bootstrap, HTML, and CSS.
+        The images that are displayed, are generated with the neural network VQGAN+CLIP,
+        by Katherine Crowson. A copy of such
+        notebook in Colab, can be found <a
+            href="https://colab.research.google.com/drive/1go6YwMFe5MX6XM9tv-cnQiSTU50N9EeT"
+            target="_blank">here</a> Some effects, were extracted from different templates and addapted to this website.
+    </p>
+    <h6>Skills developed</h6>
+    <p>I improve my intermediate skills in python, with the propose to deploy IA models
+        online in order to impress my future
+        recluters. Of course, I hope to do it with a dynamic website, instead of a
+        static website, like the one that you are watching.
+        My future blog, will be deployed using flask, because it is very symple and at
+        some point scalable. And because, it is written in
+        python, DeepLearning and MechineLearning applications could run natively.
+        <a href="https://github.com/daalopezm/Web-page-with-flask-and-bootstrap"
+            target="_blank">here</a>
+    </p>
+</div>          
+{% endblock %}
